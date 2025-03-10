@@ -26,9 +26,13 @@ for index, row in df.iterrows():
     pdf.set_text_color(100, 100, 100)
     pdf.cell(w=0, h=10, txt=row["Topic"], align="C", ln=1, border=0)
 
+    for y in range(50, 288, 10):
+        pdf.line(20, y, 200, y)  # create lines for handwriting
     
     for page in range(row["Pages"] - 1):
         pdf.add_page() # add a page
+
+        
 
         pdf.ln(274) # 250 mm of break lines
 
